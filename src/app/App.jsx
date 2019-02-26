@@ -4,6 +4,9 @@ import { Admin, Resource } from 'react-admin';
 import dataProvider from '../configuration/dataProvider';
 import authProvider from '../configuration/authProvider';
 import i18nProvider from '../i18n/i18nProvider';
+import Layout from "../common/Layout";
+import Menu from "../common/Menu";
+
 import Login from '../login/Login';
 
 import ProdutoList from "../produto/ProdutoList";
@@ -24,8 +27,8 @@ class App extends Component {
       dataProvider={dataProvider(API_URL)}
     //  i18nProvider={i18nProvider}
       loginPage={Login}
-      // menu={Menu}
-      // appLayout={Layout}
+      menu={Menu}
+      appLayout={Layout}
       // dashboard={Dashboard}
       locale="pt-BR"
     >
