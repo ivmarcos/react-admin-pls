@@ -72,6 +72,7 @@ class Notification extends React.Component {
       ...rest
     } = this.props;
 
+    console.log('notification', notification)
     return (
       <Snackbar
         open={this.state.open}

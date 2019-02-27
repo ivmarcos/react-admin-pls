@@ -15,9 +15,8 @@ import {
 } from 'react-admin';
 import { withRouter } from 'react-router-dom';
 import { changeTheme } from '../configuration/configurationActions'
-import { data } from '../configuration/authProvider'
+import { loja, user } from '../configuration/authProvider'
 import CustomCircularProgress from '../common/CircularProgress'
-
 
 const styles = {
     label: { 
@@ -38,8 +37,6 @@ class Menu extends Component {
 
     render() {
         const { onMenuClick, translate, logout, classes } = this.props //locale, theme, changeLocale, changeTheme, 
-        const {loja, user} = data;
-        console.log('data', data)
 
         if (!user) {
             return <CustomCircularProgress />

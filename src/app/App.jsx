@@ -24,7 +24,7 @@ class App extends Component {
       // customReducers={reducers}
       //customRoutes={routes}
       authProvider={authProvider}
-      dataProvider={dataProvider(API_URL)}
+      dataProvider={dataProvider}
     //  i18nProvider={i18nProvider}
       loginPage={Login}
       menu={Menu}
