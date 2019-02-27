@@ -12,12 +12,8 @@ import Dashboard from './Dashboard';
 
 import Login from '../login/Login';
 
-import ProdutoList from "../produto/ProdutoList";
-import ProdutoShow from "../produto/ProdutoShow";
-import ProdutoCreate from "../produto/ProdutoCreate";
-import ProdutoEdit from "../produto/ProdutoEdit";
+import {ProdutoList, ProdutoShow, ProdutoCreate, ProdutoEdit} from "../produto";
 
-import { API_URL } from "../configuration/constants";
 
 class App extends Component {
   render() {

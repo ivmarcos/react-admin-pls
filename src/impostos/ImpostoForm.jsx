@@ -8,14 +8,20 @@ import {
   minValue
 } from "react-admin";
 
+import {Typography} from '@material-ui/core';
+
 import { isInteger } from "../utils/validations";
 
 const validateCodProd = [required(), isInteger, minValue(1)];
 const validateNome = [required(), minLength(1)];
 const validatePreco = [required(), minValue(0.01)];
 
-const DocumentacaoForm = props => (
-  <SimpleForm {...props} toolbar={props.toolbar} redirect="list">
+const ImpostosForm = props =>  {
+  console.log('props', props);
+return (
+  <div>
+   <Typography>Impostos</Typography>
+
     <NumberInput source="cod_prod" validate={validateCodProd} />
     <TextInput source="cod_aux" />
     <TextInput source="nome" validate={validateNome} />
@@ -26,7 +32,8 @@ const DocumentacaoForm = props => (
         step: 0.01
       }}
     />
-  </SimpleForm>
+  </div>
 );
+    }
 
-export default DocumentacaoForm;
+export default ImpostosForm;

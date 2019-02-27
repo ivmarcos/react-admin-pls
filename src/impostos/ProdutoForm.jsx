@@ -15,7 +15,7 @@ const validateCodProd = [required(), isInteger, minValue(1)];
 const validateNome = [required(), minLength(1)];
 const validatePreco = [required(), minValue(0.01)];
 
-const ProdutoForm = props => { 
+const ImpostoForm = props => { 
 console.log('props', props);
 
 return (
@@ -35,4 +35,4 @@ return (
   </SimpleForm>
 );
     }
-export default ProdutoForm;
+export default ImpostoForm;
