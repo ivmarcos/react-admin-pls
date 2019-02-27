@@ -13,6 +13,7 @@ import Dashboard from './Dashboard';
 import Login from '../login/Login';
 
 import {ProdutoList, ProdutoShow, ProdutoCreate, ProdutoEdit} from "../produto";
+import {ImpostoList, ImpostoShow, ImpostoCreate, ImpostoEdit} from "../imposto";
 
 
 class App extends Component {
@@ -32,11 +33,18 @@ class App extends Component {
       locale="pt-BR"
     >
       <Resource
-          name={`produtos`}
+          name="produtos"
           list={ProdutoList}
           show={ProdutoShow}
           create={ProdutoCreate}
           edit={ProdutoEdit}
+        />
+      <Resource
+          name="impostos"
+          list={ImpostoList}
+          show={ImpostoShow}
+          create={ImpostoCreate}
+          edit={ImpostoEdit}
         />
     </Admin>
     );

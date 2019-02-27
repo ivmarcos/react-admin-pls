@@ -92,7 +92,7 @@ export default async function auth(type, params) {
         changeStore(data.loja.id)
       }).catch(err => Promise.reject(err))
     }
-    return Promise.reject('no token provided')
+    return token ? Promise.resolve() : Promise.reject()
   }
 
   if (type === AUTH_ERROR) {

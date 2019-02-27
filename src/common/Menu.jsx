@@ -29,6 +29,7 @@ const styles = {
 
 const items = [
     { name: 'Produtos', icon: <IconProducts /> },
+    { name: 'Impostos', icon: <IconProducts /> },
 ]
 
 class Menu extends Component {
@@ -58,7 +59,7 @@ class Menu extends Component {
                 <DashboardMenuItem onClick={onMenuClick} />
                 <MenuItemLink
                     to="/dashProduto"
-                    primaryText='Dash Prod.'
+                    primaryText='Dashboard Produto'
                     leftIcon={<SettingsIcon />}
                     onClick={onMenuClick}
                 />
