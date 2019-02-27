@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { SelectInput } from "react-admin";
 
 export const OPCOES = [
   {
@@ -23,7 +24,7 @@ export const OPCOES = [
 ];
 
 const IPIField = props => {
-  return <div />;
+  return <SelectInput {...props} choices={OPCOES} />;
 };
 
 IPIField.propTypes = {};

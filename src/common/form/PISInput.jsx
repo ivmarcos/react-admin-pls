@@ -1,4 +1,5 @@
 import React from "react";
+import { SelectInput } from "react-admin";
 
 export const OPCOES = [
   {
@@ -28,8 +29,8 @@ export const OPCOES = [
   { id: "49", name: "Outras Operações de Saída" },
   { id: "99", name: "Outras Operações" }
 ];
-const PISField = () => {
-  return <div />;
+const PISField = (props) => {
+  return <SelectInput {...props} choices={OPCOES} />;
 };
 
 export default PISField;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { SelectField } from "react-admin";
+import { SelectInput } from "react-admin";
 
 export const Regime = {
   NORMAL: "NORMAL",
@@ -74,7 +74,7 @@ const ICMSField = ({ regime, ...props }) => {
     regime === Regime.NORMAL
       ? OPCOES_REGIME_NORMAL
       : OPCOES_REGIME_SIMPLES_NACIONAL;
-  return <SelectField {...props} choices={opcoes} />;
+  return <SelectInput {...props} choices={opcoes} />;
 };
 
 ICMSField.propTypes = {
