@@ -14,7 +14,13 @@
     "react-admin": "^2.4.2",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "@nivo/bar": "^0.51.6",
+    "react-sizeme": "^2.5.2",
+    "react-with-styles": "^3.2.1",
+    "react-chartjs-2": "^2.7.4",
+    "react-date-range": "^1.0.0-beta",
+    "react-dates": "^18.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

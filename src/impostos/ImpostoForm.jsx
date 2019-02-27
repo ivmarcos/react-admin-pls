@@ -21,7 +21,6 @@ const ImpostosForm = props =>  {
 return (
   <div>
    <Typography>Impostos</Typography>
-
     <NumberInput source="cod_prod" validate={validateCodProd} />
     <TextInput source="cod_aux" />
     <TextInput source="nome" validate={validateNome} />

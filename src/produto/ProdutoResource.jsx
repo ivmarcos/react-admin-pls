@@ -7,7 +7,7 @@ import ProdutoEdit from "./ProdutoEdit";
 
 const ProdutoResource = () => (
   <Resource
-    name={`products`}
+    name={`produtos`}
     list={ProdutoList}
     show={ProdutoShow}
     create={ProdutoCreate}

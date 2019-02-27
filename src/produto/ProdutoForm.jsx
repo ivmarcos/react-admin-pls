@@ -8,17 +8,13 @@ import {
   minValue
 } from "react-admin";
 
-import ImpostosForm from '../impostos/ImpostosForm';
 import { isInteger } from "../utils/validations";
 
 const validateCodProd = [required(), isInteger, minValue(1)];
 const validateNome = [required(), minLength(1)];
 const validatePreco = [required(), minValue(0.01)];
 
-const ProdutoForm = props => { 
-console.log('props', props);
-
-return (
+const ProdutoForm = props => (
   <SimpleForm {...props} toolbar={props.toolbar} redirect="list">
     <NumberInput source="cod_prod" validate={validateCodProd} />
     <TextInput source="cod_aux" />
@@ -30,9 +26,7 @@ return (
         step: 0.01
       }}
     />
-    <hr/>
-    <ImpostosForm/>
   </SimpleForm>
 );
-    }
+    
 export default ProdutoForm;

@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core/styles";
 import { Title } from "react-admin";
-import { user, loja } from "../login/authProvider";
+import { data } from "../configuration/authProvider";
 import CustomCircularProgress from "../common/CircularProgress";
 
 import Bar from "../common/charts/Bar";
@@ -75,6 +75,7 @@ class ProdutoDashBoard extends Component {
   };
 
   render() {
+    const {user} = data;
     if (!user) {
       return <CustomCircularProgress />;
     }
