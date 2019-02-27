@@ -55,12 +55,6 @@ class Menu extends Component {
 
         return (
             <div>
-                <div>
-                    <Typography className={classes.label} variant="button" noWrap>{loja.cnpj}</Typography>
-                    <Typography className={classes.label} variant="button" noWrap>{loja.razao_social}</Typography>
-                    <Typography className={classes.label} variant="button" noWrap>{loja.nome_fantasia}</Typography>
-                </div>
-
                 <DashboardMenuItem onClick={onMenuClick} />
                 <MenuItemLink
                     to="/dashProduto"

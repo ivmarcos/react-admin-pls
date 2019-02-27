@@ -13,21 +13,35 @@ function setData(prop, value) {
   data[prop] = value;
 }
 
+// async function loadConfig(token) {
+//   const response = await axios.request({
+//       method: "post",
+//       url: `${url}/Usuarios/configuracao?access_token=${token}`
+//     })
+//   console.log('response from auth', response.data)
+//   const user = response.data;
+//   localStorage.setItem("user", user);
+//   setData('user', user);
+//   setData('loja', user.lojas[0])
+//   return Promise.resolve(user);
+// }
+
 async function loadConfig(token) {
-  const response = await axios.request({
+  return axios.request({
       method: "post",
       url: `${url}/Usuarios/configuracao?access_token=${token}`
+    }).then(response => {
+      const user = response.data;
+      localStorage.setItem("user", user);
+      setData('user', user);
+      setData('loja', user.lojas[0])
     })
-  console.log('response from auth', response.data)
-  const user = response.data;
-  localStorage.setItem("user", user);
-  setData('user', user);
-  setData('loja', user.lojas[0])
-  return user;
 }
+
 
 export function changeStore(id) {
   setData("loja", data.user.lojas.find(l => l.id === id));
+  return Promise.resolve();
 }
 
 export default async function auth(type, params) {
@@ -73,11 +87,10 @@ export default async function auth(type, params) {
   if (type === AUTH_CHECK) {
     const token = localStorage.getItem(storageKey);
     console.log('token', token, data)
-    if (token) {
-      const user = await loadConfig(token);
-      console.log('user', user);
-      await changeStore(data.loja.id);
-      return;
+    if (token && data.user) {
+      return loadConfig(token).then(() => {
+        changeStore(data.loja.id)
+      }).catch(err => Promise.reject(err))
     }
     return Promise.reject('no token provided')
   }
